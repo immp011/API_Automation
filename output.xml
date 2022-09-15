@@ -1,0 +1,1471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220902 13:02:08.426" rpa="false" schemaversion="3">
+<suite id="s1" name="TestSuite" source="C:\DevOps Prac\API Automation\Vee24\TestSuite">
+<suite id="s1-s1" name="AppointmentCategory" source="C:\DevOps Prac\API Automation\Vee24\TestSuite\AppointmentCategory.robot">
+<test id="s1-s1-t1" name="Check the reponse code 200 for Appointment Types" line="7">
+<kw name="ValidateStatus" library="Common_Keyword">
+<arg>${BASE_URL}</arg>
+<arg>${APPOINTMENTCATEGORIES}</arg>
+<arg>${SITE_NAME}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:10.227" level="INFO">${endpoint} = /api/AppointmentCategories?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:10.227" endtime="20220902 13:02:10.228"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${base_url}</arg>
+<arg>${endpoint}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220902 13:02:11.767" level="INFO">GET Request : url=https://api-dev.vee24.com/?/api/AppointmentCategories?sitename=autotest1 
+ path_url=/?/api/AppointmentCategories?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:11.768" level="INFO">GET Response : url=https://api-dev.vee24.com/?/api/AppointmentCategories?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'Cache-Control': 'private', 'Content-Type': 'text/html; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:11 GMT', 'Server': 'unknown', 'X-AspNetMvc-Version': '5.2', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '2376'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width" /&gt;
+    &lt;title&gt;Home Page&lt;/title&gt;
+
+    &lt;script src="/bundles/jquery?v=MRjVrMuK9DXe6nW0tFmw9cj1pT5oo4Jf-eJQmGfwEF01"&gt;&lt;/script&gt;
+
+    &lt;script src="/bundles/bootstrap?v=lescQEuG5u4jd-GcVDBcbpUOSyTDIg0Kk9zHDX55GCw1"&gt;&lt;/script&gt;
+
+
+    &lt;link href="/Content/css?v=nzXRKv4ODWVGBu7BJnIFMRAbPUW7BytEsPnIsE3b1b81" rel="stylesheet"/&gt;
+
+    &lt;script src="/bundles/modernizr?v="&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="navbar navbar-inverse navbar-fixed-top"&gt;
+        &lt;div class="pull-left"&gt;&lt;img src="/Assets/LogoMasterColorWhite-RGB.png" style="width:145px" /&gt;&lt;/div&gt;
+        &lt;div class="container"&gt;    
+            &lt;div class="navbar-header"&gt;
+                &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"&gt;
+                    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="navbar-collapse collapse"&gt;
+                &lt;ul class="nav navbar-nav"&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+
+                        &lt;li&gt;&lt;a href="/Home/ApiDocumentation"&gt;API Documentation&lt;/a&gt;&lt;/li&gt;
+                    
+                    &lt;li&gt;&lt;a href="/Admin"&gt;Admin&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="container body-content"&gt;
+        
+&lt;div class="jumbotron"&gt;
+    &lt;h1&gt;VEE24 APIs&lt;/h1&gt;
+    &lt;h4&gt;Vee24 provides an extensive set of APIs on a variety of platforms&lt;/h4&gt;
+    &lt;ul style="list-style-type:disc"&gt;
+        &lt;li&gt;REST&lt;/li&gt;
+        &lt;li&gt;Javascript&lt;/li&gt;
+        &lt;li&gt;iOS&lt;/li&gt;
+        &lt;li&gt;Android&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;hr /&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;h5&gt;Please &lt;a href="https://www.vee24.com/en/contact/"&gt;contact Vee24&lt;/a&gt; for more details.&lt;/h5&gt;
+    &lt;!--
+    &lt;p&gt;&lt;a href="http://www.vee24.com" class="btn btn-primary btn-large"&gt;Learn more &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+    --&gt;
+&lt;/div&gt;
+        &lt;hr /&gt;
+        &lt;footer&gt;
+            &lt;p&gt;&amp;copy; 2022 - VEE24&lt;/p&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+
+    &lt;script src="/bundles/jquery?v=MRjVrMuK9DXe6nW0tFmw9cj1pT5oo4Jf-eJQmGfwEF01"&gt;&lt;/script&gt;
+
+    &lt;script src="/bundles/bootstrap?v=lescQEuG5u4jd-GcVDBcbpUOSyTDIg0Kk9zHDX55GCw1"&gt;&lt;/script&gt;
+
+    
+&lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20220902 13:02:11.768" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:10.228" endtime="20220902 13:02:11.768"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 13:02:11.768" endtime="20220902 13:02:11.768"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:10.226" endtime="20220902 13:02:11.769"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:10.225" endtime="20220902 13:02:11.769"/>
+</test>
+<test id="s1-s1-t2" name="Verifying received response body with the expected response" line="11">
+<kw name="CompareJSON" library="Common_Keyword">
+<arg>${APPOINTMENTCATEGORIES}</arg>
+<arg>${FP_appcat}</arg>
+<kw name="GetJSON" library="Common_Keyword">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>${element}</arg>
+<arg>${SITE_NAME}</arg>
+<tag>Common</tag>
+<doc>This keyword checks the response for API request If response code is 200 then case is passed, for any other rsponse test case is failed.</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220902 13:02:11.774" level="INFO">Creating Session using : alias=mysession, url=https://api-dev.vee24.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 13:02:11.773" endtime="20220902 13:02:11.774"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:11.775" level="INFO">${endpoint} = /api/AppointmentCategories?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:11.774" endtime="20220902 13:02:11.775"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220902 13:02:12.041" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentCategories?sitename=autotest1 
+ path_url=/api/AppointmentCategories?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:12.042" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentCategories?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'max-age=1800', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:11 GMT', 'Expires': 'Fri, 02 Sep 2022 08:02:12 GMT', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '615'} 
+ body={"categories":[{"id":48,"name":"Parent 1","parentCategoryId":47,"appointmentTypeId":null,"level":2,"hasChild":true},{"id":49,"name":"Child 1","parentCategoryId":48,"appointmentTypeId":63,"level":3,"hasChild":false},{"id":50,"name":"Parent 2","parentCategoryId":47,"appointmentTypeId":null,"level":2,"hasChild":true},{"id":51,"name":"Child 3","parentCategoryId":50,"appointmentTypeId":null,"level":3,"hasChild":true},{"id":52,"name":"Child 4","parentCategoryId":51,"appointmentTypeId":63,"level":4,"hasChild":false},{"id":53,"name":"Child 2","parentCategoryId":48,"appointmentTypeId":63,"level":3,"hasChild":false}]} 
+ </msg>
+<msg timestamp="20220902 13:02:12.042" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:11.775" endtime="20220902 13:02:12.043"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>&amp;{response}</var>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 13:02:12.053" level="INFO">&amp;{response} = { categories=[{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeId'...</msg>
+<status status="PASS" starttime="20220902 13:02:12.043" endtime="20220902 13:02:12.053"/>
+</kw>
+<msg timestamp="20220902 13:02:12.054" level="INFO">${response} = {'categories': [{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeI...</msg>
+<status status="PASS" starttime="20220902 13:02:11.772" endtime="20220902 13:02:12.054"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${file_json}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220902 13:02:12.065" level="INFO">${file_json} = {'categories': [{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeI...</msg>
+<status status="PASS" starttime="20220902 13:02:12.054" endtime="20220902 13:02:12.065"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response}</arg>
+<arg>${file_json}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20220902 13:02:12.066" level="INFO">Argument types are:
+&lt;class 'robot.utils.dotdict.DotDict'&gt;
+&lt;class 'dict'&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:12.065" endtime="20220902 13:02:12.066"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:11.772" endtime="20220902 13:02:12.066"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:11.771" endtime="20220902 13:02:12.067"/>
+</test>
+<test id="s1-s1-t3" name="Verifying ID of appointment category with the expected response" line="15">
+<kw name="CompareElements" library="Common_Keyword">
+<arg>${JP_ID}</arg>
+<arg>${APPOINTMENTCATEGORIES}</arg>
+<arg>${FP_appcat}</arg>
+<kw name="GetJSON" library="Common_Keyword">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>${elements}</arg>
+<arg>${SITE_NAME}</arg>
+<tag>Common</tag>
+<doc>This keyword checks the response for API request If response code is 200 then case is passed, for any other rsponse test case is failed.</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220902 13:02:12.075" level="INFO">Creating Session using : alias=mysession, url=https://api-dev.vee24.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 13:02:12.075" endtime="20220902 13:02:12.076"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:12.077" level="INFO">${endpoint} = /api/AppointmentCategories?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:12.076" endtime="20220902 13:02:12.077"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220902 13:02:12.313" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentCategories?sitename=autotest1 
+ path_url=/api/AppointmentCategories?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:12.313" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentCategories?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'max-age=1800', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:11 GMT', 'Expires': 'Fri, 02 Sep 2022 08:02:12 GMT', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '615'} 
+ body={"categories":[{"id":48,"name":"Parent 1","parentCategoryId":47,"appointmentTypeId":null,"level":2,"hasChild":true},{"id":49,"name":"Child 1","parentCategoryId":48,"appointmentTypeId":63,"level":3,"hasChild":false},{"id":50,"name":"Parent 2","parentCategoryId":47,"appointmentTypeId":null,"level":2,"hasChild":true},{"id":51,"name":"Child 3","parentCategoryId":50,"appointmentTypeId":null,"level":3,"hasChild":true},{"id":52,"name":"Child 4","parentCategoryId":51,"appointmentTypeId":63,"level":4,"hasChild":false},{"id":53,"name":"Child 2","parentCategoryId":48,"appointmentTypeId":63,"level":3,"hasChild":false}]} 
+ </msg>
+<msg timestamp="20220902 13:02:12.314" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:12.077" endtime="20220902 13:02:12.314"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>&amp;{response}</var>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 13:02:12.317" level="INFO">&amp;{response} = { categories=[{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeId'...</msg>
+<status status="PASS" starttime="20220902 13:02:12.314" endtime="20220902 13:02:12.317"/>
+</kw>
+<msg timestamp="20220902 13:02:12.318" level="INFO">${response} = {'categories': [{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeI...</msg>
+<status status="PASS" starttime="20220902 13:02:12.073" endtime="20220902 13:02:12.318"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${resp_obj}</var>
+<arg>${response}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:12.375" level="INFO">${resp_obj} = [48, 49, 50, 51, 52, 53]</msg>
+<status status="PASS" starttime="20220902 13:02:12.318" endtime="20220902 13:02:12.375"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${file_json}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220902 13:02:12.378" level="INFO">${file_json} = {'categories': [{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeI...</msg>
+<status status="PASS" starttime="20220902 13:02:12.376" endtime="20220902 13:02:12.378"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${file_json}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:12.400" level="INFO">${json_object} = [48, 49, 50, 51, 52, 53]</msg>
+<status status="PASS" starttime="20220902 13:02:12.378" endtime="20220902 13:02:12.400"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp_obj}</arg>
+<arg>${json_object}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220902 13:02:12.400" endtime="20220902 13:02:12.400"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:12.072" endtime="20220902 13:02:12.400"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 13:02:12.401" endtime="20220902 13:02:12.401"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:12.071" endtime="20220902 13:02:12.402"/>
+</test>
+<test id="s1-s1-t4" name="Verifying Category Name of appointment category with the expected response" line="20">
+<kw name="CompareElements" library="Common_Keyword">
+<arg>${JP_CATEGORYNAME}</arg>
+<arg>${APPOINTMENTCATEGORIES}</arg>
+<arg>${FP_appcat}</arg>
+<kw name="GetJSON" library="Common_Keyword">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>${elements}</arg>
+<arg>${SITE_NAME}</arg>
+<tag>Common</tag>
+<doc>This keyword checks the response for API request If response code is 200 then case is passed, for any other rsponse test case is failed.</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220902 13:02:12.406" level="INFO">Creating Session using : alias=mysession, url=https://api-dev.vee24.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 13:02:12.406" endtime="20220902 13:02:12.406"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:12.407" level="INFO">${endpoint} = /api/AppointmentCategories?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:12.406" endtime="20220902 13:02:12.407"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220902 13:02:12.652" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentCategories?sitename=autotest1 
+ path_url=/api/AppointmentCategories?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:12.652" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentCategories?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'max-age=1800', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:11 GMT', 'Expires': 'Fri, 02 Sep 2022 08:02:12 GMT', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '615'} 
+ body={"categories":[{"id":48,"name":"Parent 1","parentCategoryId":47,"appointmentTypeId":null,"level":2,"hasChild":true},{"id":49,"name":"Child 1","parentCategoryId":48,"appointmentTypeId":63,"level":3,"hasChild":false},{"id":50,"name":"Parent 2","parentCategoryId":47,"appointmentTypeId":null,"level":2,"hasChild":true},{"id":51,"name":"Child 3","parentCategoryId":50,"appointmentTypeId":null,"level":3,"hasChild":true},{"id":52,"name":"Child 4","parentCategoryId":51,"appointmentTypeId":63,"level":4,"hasChild":false},{"id":53,"name":"Child 2","parentCategoryId":48,"appointmentTypeId":63,"level":3,"hasChild":false}]} 
+ </msg>
+<msg timestamp="20220902 13:02:12.653" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:12.407" endtime="20220902 13:02:12.653"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>&amp;{response}</var>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 13:02:12.656" level="INFO">&amp;{response} = { categories=[{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeId'...</msg>
+<status status="PASS" starttime="20220902 13:02:12.654" endtime="20220902 13:02:12.656"/>
+</kw>
+<msg timestamp="20220902 13:02:12.657" level="INFO">${response} = {'categories': [{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeI...</msg>
+<status status="PASS" starttime="20220902 13:02:12.405" endtime="20220902 13:02:12.657"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${resp_obj}</var>
+<arg>${response}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:12.717" level="INFO">${resp_obj} = ['Parent 1', 'Child 1', 'Parent 2', 'Child 3', 'Child 4', 'Child 2']</msg>
+<status status="PASS" starttime="20220902 13:02:12.658" endtime="20220902 13:02:12.717"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${file_json}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220902 13:02:12.720" level="INFO">${file_json} = {'categories': [{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeI...</msg>
+<status status="PASS" starttime="20220902 13:02:12.717" endtime="20220902 13:02:12.720"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${file_json}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:12.743" level="INFO">${json_object} = ['Parent 1', 'Child 1', 'Parent 2', 'Child 3', 'Child 4', 'Child 2']</msg>
+<status status="PASS" starttime="20220902 13:02:12.720" endtime="20220902 13:02:12.743"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp_obj}</arg>
+<arg>${json_object}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220902 13:02:12.743" endtime="20220902 13:02:12.743"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:12.404" endtime="20220902 13:02:12.743"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 13:02:12.744" endtime="20220902 13:02:12.744"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:12.404" endtime="20220902 13:02:12.745"/>
+</test>
+<test id="s1-s1-t5" name="Verifying Parent category ID of appointment category with the expected response" line="25">
+<kw name="CompareElements" library="Common_Keyword">
+<arg>${JP_parentCATEGORYID}</arg>
+<arg>${APPOINTMENTCATEGORIES}</arg>
+<arg>${FP_appcat}</arg>
+<kw name="GetJSON" library="Common_Keyword">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>${elements}</arg>
+<arg>${SITE_NAME}</arg>
+<tag>Common</tag>
+<doc>This keyword checks the response for API request If response code is 200 then case is passed, for any other rsponse test case is failed.</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220902 13:02:12.749" level="INFO">Creating Session using : alias=mysession, url=https://api-dev.vee24.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 13:02:12.749" endtime="20220902 13:02:12.749"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:12.749" level="INFO">${endpoint} = /api/AppointmentCategories?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:12.749" endtime="20220902 13:02:12.749"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220902 13:02:12.977" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentCategories?sitename=autotest1 
+ path_url=/api/AppointmentCategories?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:12.977" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentCategories?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'max-age=1800', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:12 GMT', 'Expires': 'Fri, 02 Sep 2022 08:02:12 GMT', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '615'} 
+ body={"categories":[{"id":48,"name":"Parent 1","parentCategoryId":47,"appointmentTypeId":null,"level":2,"hasChild":true},{"id":49,"name":"Child 1","parentCategoryId":48,"appointmentTypeId":63,"level":3,"hasChild":false},{"id":50,"name":"Parent 2","parentCategoryId":47,"appointmentTypeId":null,"level":2,"hasChild":true},{"id":51,"name":"Child 3","parentCategoryId":50,"appointmentTypeId":null,"level":3,"hasChild":true},{"id":52,"name":"Child 4","parentCategoryId":51,"appointmentTypeId":63,"level":4,"hasChild":false},{"id":53,"name":"Child 2","parentCategoryId":48,"appointmentTypeId":63,"level":3,"hasChild":false}]} 
+ </msg>
+<msg timestamp="20220902 13:02:12.978" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:12.750" endtime="20220902 13:02:12.978"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>&amp;{response}</var>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 13:02:12.981" level="INFO">&amp;{response} = { categories=[{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeId'...</msg>
+<status status="PASS" starttime="20220902 13:02:12.979" endtime="20220902 13:02:12.981"/>
+</kw>
+<msg timestamp="20220902 13:02:12.982" level="INFO">${response} = {'categories': [{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeI...</msg>
+<status status="PASS" starttime="20220902 13:02:12.748" endtime="20220902 13:02:12.982"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${resp_obj}</var>
+<arg>${response}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:13.037" level="INFO">${resp_obj} = [47, 48, 47, 50, 51, 48]</msg>
+<status status="PASS" starttime="20220902 13:02:12.982" endtime="20220902 13:02:13.037"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${file_json}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220902 13:02:13.040" level="INFO">${file_json} = {'categories': [{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeI...</msg>
+<status status="PASS" starttime="20220902 13:02:13.037" endtime="20220902 13:02:13.040"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${file_json}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:13.061" level="INFO">${json_object} = [47, 48, 47, 50, 51, 48]</msg>
+<status status="PASS" starttime="20220902 13:02:13.040" endtime="20220902 13:02:13.061"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp_obj}</arg>
+<arg>${json_object}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220902 13:02:13.061" endtime="20220902 13:02:13.061"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:12.747" endtime="20220902 13:02:13.062"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 13:02:13.062" endtime="20220902 13:02:13.063"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:12.747" endtime="20220902 13:02:13.063"/>
+</test>
+<test id="s1-s1-t6" name="Verifying has child value of appointment category with the expected response" line="30">
+<kw name="CompareElements" library="Common_Keyword">
+<arg>${JP_hasChild}</arg>
+<arg>${APPOINTMENTCATEGORIES}</arg>
+<arg>${FP_appcat}</arg>
+<kw name="GetJSON" library="Common_Keyword">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>${elements}</arg>
+<arg>${SITE_NAME}</arg>
+<tag>Common</tag>
+<doc>This keyword checks the response for API request If response code is 200 then case is passed, for any other rsponse test case is failed.</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220902 13:02:13.067" level="INFO">Creating Session using : alias=mysession, url=https://api-dev.vee24.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 13:02:13.067" endtime="20220902 13:02:13.067"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:13.068" level="INFO">${endpoint} = /api/AppointmentCategories?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:13.067" endtime="20220902 13:02:13.068"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220902 13:02:13.283" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentCategories?sitename=autotest1 
+ path_url=/api/AppointmentCategories?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:13.284" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentCategories?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'max-age=1800', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:12 GMT', 'Expires': 'Fri, 02 Sep 2022 08:02:13 GMT', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '615'} 
+ body={"categories":[{"id":48,"name":"Parent 1","parentCategoryId":47,"appointmentTypeId":null,"level":2,"hasChild":true},{"id":49,"name":"Child 1","parentCategoryId":48,"appointmentTypeId":63,"level":3,"hasChild":false},{"id":50,"name":"Parent 2","parentCategoryId":47,"appointmentTypeId":null,"level":2,"hasChild":true},{"id":51,"name":"Child 3","parentCategoryId":50,"appointmentTypeId":null,"level":3,"hasChild":true},{"id":52,"name":"Child 4","parentCategoryId":51,"appointmentTypeId":63,"level":4,"hasChild":false},{"id":53,"name":"Child 2","parentCategoryId":48,"appointmentTypeId":63,"level":3,"hasChild":false}]} 
+ </msg>
+<msg timestamp="20220902 13:02:13.285" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:13.068" endtime="20220902 13:02:13.285"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>&amp;{response}</var>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 13:02:13.288" level="INFO">&amp;{response} = { categories=[{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeId'...</msg>
+<status status="PASS" starttime="20220902 13:02:13.285" endtime="20220902 13:02:13.288"/>
+</kw>
+<msg timestamp="20220902 13:02:13.289" level="INFO">${response} = {'categories': [{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeI...</msg>
+<status status="PASS" starttime="20220902 13:02:13.066" endtime="20220902 13:02:13.289"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${resp_obj}</var>
+<arg>${response}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:13.331" level="INFO">${resp_obj} = [True, False, True, True, False, False]</msg>
+<status status="PASS" starttime="20220902 13:02:13.289" endtime="20220902 13:02:13.332"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${file_json}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220902 13:02:13.334" level="INFO">${file_json} = {'categories': [{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeI...</msg>
+<status status="PASS" starttime="20220902 13:02:13.332" endtime="20220902 13:02:13.334"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${file_json}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:13.355" level="INFO">${json_object} = [True, False, True, True, False, False]</msg>
+<status status="PASS" starttime="20220902 13:02:13.334" endtime="20220902 13:02:13.355"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp_obj}</arg>
+<arg>${json_object}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220902 13:02:13.355" endtime="20220902 13:02:13.356"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:13.066" endtime="20220902 13:02:13.356"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 13:02:13.357" endtime="20220902 13:02:13.357"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:13.065" endtime="20220902 13:02:13.358"/>
+</test>
+<test id="s1-s1-t7" name="Verifying Level of appointment category with the expected response" line="35">
+<kw name="CompareElements" library="Common_Keyword">
+<arg>${JP_Level}</arg>
+<arg>${APPOINTMENTCATEGORIES}</arg>
+<arg>${FP_appcat}</arg>
+<kw name="GetJSON" library="Common_Keyword">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>${elements}</arg>
+<arg>${SITE_NAME}</arg>
+<tag>Common</tag>
+<doc>This keyword checks the response for API request If response code is 200 then case is passed, for any other rsponse test case is failed.</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220902 13:02:13.361" level="INFO">Creating Session using : alias=mysession, url=https://api-dev.vee24.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 13:02:13.361" endtime="20220902 13:02:13.361"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:13.362" level="INFO">${endpoint} = /api/AppointmentCategories?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:13.361" endtime="20220902 13:02:13.362"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220902 13:02:13.632" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentCategories?sitename=autotest1 
+ path_url=/api/AppointmentCategories?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:13.632" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentCategories?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'max-age=1800', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:12 GMT', 'Expires': 'Fri, 02 Sep 2022 08:02:13 GMT', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '615'} 
+ body={"categories":[{"id":48,"name":"Parent 1","parentCategoryId":47,"appointmentTypeId":null,"level":2,"hasChild":true},{"id":49,"name":"Child 1","parentCategoryId":48,"appointmentTypeId":63,"level":3,"hasChild":false},{"id":50,"name":"Parent 2","parentCategoryId":47,"appointmentTypeId":null,"level":2,"hasChild":true},{"id":51,"name":"Child 3","parentCategoryId":50,"appointmentTypeId":null,"level":3,"hasChild":true},{"id":52,"name":"Child 4","parentCategoryId":51,"appointmentTypeId":63,"level":4,"hasChild":false},{"id":53,"name":"Child 2","parentCategoryId":48,"appointmentTypeId":63,"level":3,"hasChild":false}]} 
+ </msg>
+<msg timestamp="20220902 13:02:13.633" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:13.362" endtime="20220902 13:02:13.633"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>&amp;{response}</var>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 13:02:13.635" level="INFO">&amp;{response} = { categories=[{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeId'...</msg>
+<status status="PASS" starttime="20220902 13:02:13.633" endtime="20220902 13:02:13.636"/>
+</kw>
+<msg timestamp="20220902 13:02:13.637" level="INFO">${response} = {'categories': [{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeI...</msg>
+<status status="PASS" starttime="20220902 13:02:13.360" endtime="20220902 13:02:13.637"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${resp_obj}</var>
+<arg>${response}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:13.688" level="INFO">${resp_obj} = [2, 3, 2, 3, 4, 3]</msg>
+<status status="PASS" starttime="20220902 13:02:13.638" endtime="20220902 13:02:13.688"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${file_json}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220902 13:02:13.691" level="INFO">${file_json} = {'categories': [{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeI...</msg>
+<status status="PASS" starttime="20220902 13:02:13.688" endtime="20220902 13:02:13.691"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${file_json}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:13.712" level="INFO">${json_object} = [2, 3, 2, 3, 4, 3]</msg>
+<status status="PASS" starttime="20220902 13:02:13.691" endtime="20220902 13:02:13.712"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp_obj}</arg>
+<arg>${json_object}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220902 13:02:13.712" endtime="20220902 13:02:13.713"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:13.360" endtime="20220902 13:02:13.713"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 13:02:13.713" endtime="20220902 13:02:13.714"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:13.359" endtime="20220902 13:02:13.714"/>
+</test>
+<test id="s1-s1-t8" name="Verifying the associated appointment type ids of appointment category with the expected response" line="40">
+<kw name="CompareElements" library="Common_Keyword">
+<arg>${JP_appointmentTYPEID}</arg>
+<arg>${APPOINTMENTCATEGORIES}</arg>
+<arg>${FP_appcat}</arg>
+<kw name="GetJSON" library="Common_Keyword">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>${elements}</arg>
+<arg>${SITE_NAME}</arg>
+<tag>Common</tag>
+<doc>This keyword checks the response for API request If response code is 200 then case is passed, for any other rsponse test case is failed.</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220902 13:02:13.718" level="INFO">Creating Session using : alias=mysession, url=https://api-dev.vee24.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 13:02:13.718" endtime="20220902 13:02:13.718"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:13.719" level="INFO">${endpoint} = /api/AppointmentCategories?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:13.718" endtime="20220902 13:02:13.719"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220902 13:02:14.068" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentCategories?sitename=autotest1 
+ path_url=/api/AppointmentCategories?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:14.069" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentCategories?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'max-age=1800', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:12 GMT', 'Expires': 'Fri, 02 Sep 2022 08:02:13 GMT', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '615'} 
+ body={"categories":[{"id":48,"name":"Parent 1","parentCategoryId":47,"appointmentTypeId":null,"level":2,"hasChild":true},{"id":49,"name":"Child 1","parentCategoryId":48,"appointmentTypeId":63,"level":3,"hasChild":false},{"id":50,"name":"Parent 2","parentCategoryId":47,"appointmentTypeId":null,"level":2,"hasChild":true},{"id":51,"name":"Child 3","parentCategoryId":50,"appointmentTypeId":null,"level":3,"hasChild":true},{"id":52,"name":"Child 4","parentCategoryId":51,"appointmentTypeId":63,"level":4,"hasChild":false},{"id":53,"name":"Child 2","parentCategoryId":48,"appointmentTypeId":63,"level":3,"hasChild":false}]} 
+ </msg>
+<msg timestamp="20220902 13:02:14.069" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:13.719" endtime="20220902 13:02:14.069"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>&amp;{response}</var>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 13:02:14.070" level="INFO">&amp;{response} = { categories=[{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeId'...</msg>
+<status status="PASS" starttime="20220902 13:02:14.069" endtime="20220902 13:02:14.071"/>
+</kw>
+<msg timestamp="20220902 13:02:14.071" level="INFO">${response} = {'categories': [{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeI...</msg>
+<status status="PASS" starttime="20220902 13:02:13.717" endtime="20220902 13:02:14.071"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${resp_obj}</var>
+<arg>${response}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:14.126" level="INFO">${resp_obj} = [None, 63, None, None, 63, 63]</msg>
+<status status="PASS" starttime="20220902 13:02:14.071" endtime="20220902 13:02:14.126"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${file_json}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220902 13:02:14.129" level="INFO">${file_json} = {'categories': [{'id': 48, 'name': 'Parent 1', 'parentCategoryId': 47, 'appointmentTypeId': None, 'level': 2, 'hasChild': True}, {'id': 49, 'name': 'Child 1', 'parentCategoryId': 48, 'appointmentTypeI...</msg>
+<status status="PASS" starttime="20220902 13:02:14.126" endtime="20220902 13:02:14.129"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${file_json}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:14.153" level="INFO">${json_object} = [None, 63, None, None, 63, 63]</msg>
+<status status="PASS" starttime="20220902 13:02:14.129" endtime="20220902 13:02:14.153"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp_obj}</arg>
+<arg>${json_object}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220902 13:02:14.153" endtime="20220902 13:02:14.153"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:13.717" endtime="20220902 13:02:14.153"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 13:02:14.154" endtime="20220902 13:02:14.154"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:13.716" endtime="20220902 13:02:14.155"/>
+</test>
+<status status="PASS" starttime="20220902 13:02:08.566" endtime="20220902 13:02:14.157"/>
+</suite>
+<suite id="s1-s2" name="AppointmentTypes" source="C:\DevOps Prac\API Automation\Vee24\TestSuite\AppointmentTypes.robot">
+<test id="s1-s2-t1" name="Check the reponse code 200 for Appointment Types" line="7">
+<kw name="ValidateStatus" library="Common_Keyword">
+<arg>${BASE_URL}</arg>
+<arg>${APPOINTMENTTYPES}</arg>
+<arg>${SITE_NAME}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:14.174" level="INFO">${endpoint} = /api/AppointmentTypes?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:14.174" endtime="20220902 13:02:14.174"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${base_url}</arg>
+<arg>${endpoint}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220902 13:02:14.402" level="INFO">GET Request : url=https://api-dev.vee24.com/?/api/AppointmentTypes?sitename=autotest1 
+ path_url=/?/api/AppointmentTypes?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:14.402" level="INFO">GET Response : url=https://api-dev.vee24.com/?/api/AppointmentTypes?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'Cache-Control': 'private', 'Content-Type': 'text/html; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:14 GMT', 'Server': 'unknown', 'X-AspNetMvc-Version': '5.2', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '2376'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width" /&gt;
+    &lt;title&gt;Home Page&lt;/title&gt;
+
+    &lt;script src="/bundles/jquery?v=MRjVrMuK9DXe6nW0tFmw9cj1pT5oo4Jf-eJQmGfwEF01"&gt;&lt;/script&gt;
+
+    &lt;script src="/bundles/bootstrap?v=lescQEuG5u4jd-GcVDBcbpUOSyTDIg0Kk9zHDX55GCw1"&gt;&lt;/script&gt;
+
+
+    &lt;link href="/Content/css?v=nzXRKv4ODWVGBu7BJnIFMRAbPUW7BytEsPnIsE3b1b81" rel="stylesheet"/&gt;
+
+    &lt;script src="/bundles/modernizr?v="&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="navbar navbar-inverse navbar-fixed-top"&gt;
+        &lt;div class="pull-left"&gt;&lt;img src="/Assets/LogoMasterColorWhite-RGB.png" style="width:145px" /&gt;&lt;/div&gt;
+        &lt;div class="container"&gt;    
+            &lt;div class="navbar-header"&gt;
+                &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"&gt;
+                    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="navbar-collapse collapse"&gt;
+                &lt;ul class="nav navbar-nav"&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+
+                        &lt;li&gt;&lt;a href="/Home/ApiDocumentation"&gt;API Documentation&lt;/a&gt;&lt;/li&gt;
+                    
+                    &lt;li&gt;&lt;a href="/Admin"&gt;Admin&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="container body-content"&gt;
+        
+&lt;div class="jumbotron"&gt;
+    &lt;h1&gt;VEE24 APIs&lt;/h1&gt;
+    &lt;h4&gt;Vee24 provides an extensive set of APIs on a variety of platforms&lt;/h4&gt;
+    &lt;ul style="list-style-type:disc"&gt;
+        &lt;li&gt;REST&lt;/li&gt;
+        &lt;li&gt;Javascript&lt;/li&gt;
+        &lt;li&gt;iOS&lt;/li&gt;
+        &lt;li&gt;Android&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;hr /&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;h5&gt;Please &lt;a href="https://www.vee24.com/en/contact/"&gt;contact Vee24&lt;/a&gt; for more details.&lt;/h5&gt;
+    &lt;!--
+    &lt;p&gt;&lt;a href="http://www.vee24.com" class="btn btn-primary btn-large"&gt;Learn more &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+    --&gt;
+&lt;/div&gt;
+        &lt;hr /&gt;
+        &lt;footer&gt;
+            &lt;p&gt;&amp;copy; 2022 - VEE24&lt;/p&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+
+    &lt;script src="/bundles/jquery?v=MRjVrMuK9DXe6nW0tFmw9cj1pT5oo4Jf-eJQmGfwEF01"&gt;&lt;/script&gt;
+
+    &lt;script src="/bundles/bootstrap?v=lescQEuG5u4jd-GcVDBcbpUOSyTDIg0Kk9zHDX55GCw1"&gt;&lt;/script&gt;
+
+    
+&lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20220902 13:02:14.402" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:14.174" endtime="20220902 13:02:14.402"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 13:02:14.402" endtime="20220902 13:02:14.403"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:14.173" endtime="20220902 13:02:14.403"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:14.173" endtime="20220902 13:02:14.404"/>
+</test>
+<test id="s1-s2-t2" name="Verifying the received response body with the expected response" line="11">
+<kw name="CompareJSON" library="Common_Keyword">
+<arg>${APPOINTMENTTYPES}</arg>
+<arg>${FP_apptype}</arg>
+<kw name="GetJSON" library="Common_Keyword">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>${element}</arg>
+<arg>${SITE_NAME}</arg>
+<tag>Common</tag>
+<doc>This keyword checks the response for API request If response code is 200 then case is passed, for any other rsponse test case is failed.</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220902 13:02:14.407" level="INFO">Creating Session using : alias=mysession, url=https://api-dev.vee24.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 13:02:14.407" endtime="20220902 13:02:14.408"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:14.408" level="INFO">${endpoint} = /api/AppointmentTypes?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:14.408" endtime="20220902 13:02:14.408"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220902 13:02:14.652" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentTypes?sitename=autotest1 
+ path_url=/api/AppointmentTypes?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:14.652" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentTypes?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'max-age=1800', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:14 GMT', 'Expires': 'Fri, 02 Sep 2022 08:02:14 GMT', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '2119'} 
+ body={"appointmentTypes":[{"id":63,"name":"Test VeeCall","callType":"VeeCall","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"update\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]},{"id":64,"name":"Sofa","callType":"Chat","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"append\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]}]} 
+ </msg>
+<msg timestamp="20220902 13:02:14.653" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:14.408" endtime="20220902 13:02:14.653"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>&amp;{response}</var>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 13:02:14.653" level="INFO">&amp;{response} = { appointmentTypes=[{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "upda...</msg>
+<status status="PASS" starttime="20220902 13:02:14.653" endtime="20220902 13:02:14.653"/>
+</kw>
+<msg timestamp="20220902 13:02:14.654" level="INFO">${response} = {'appointmentTypes': [{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "up...</msg>
+<status status="PASS" starttime="20220902 13:02:14.406" endtime="20220902 13:02:14.654"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${file_json}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220902 13:02:14.664" level="INFO">${file_json} = {'appointmentTypes': [{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "up...</msg>
+<status status="PASS" starttime="20220902 13:02:14.654" endtime="20220902 13:02:14.664"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response}</arg>
+<arg>${file_json}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20220902 13:02:14.666" level="INFO">Argument types are:
+&lt;class 'robot.utils.dotdict.DotDict'&gt;
+&lt;class 'dict'&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:14.665" endtime="20220902 13:02:14.667"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:14.406" endtime="20220902 13:02:14.667"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:14.405" endtime="20220902 13:02:14.668"/>
+</test>
+<test id="s1-s2-t3" name="Verifying Call Types of appointment types with the expected response" line="15">
+<kw name="CompareElements" library="Common_Keyword">
+<arg>${JP_CALLTYPE}</arg>
+<arg>${APPOINTMENTTYPES}</arg>
+<arg>${FP_apptype}</arg>
+<kw name="GetJSON" library="Common_Keyword">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>${elements}</arg>
+<arg>${SITE_NAME}</arg>
+<tag>Common</tag>
+<doc>This keyword checks the response for API request If response code is 200 then case is passed, for any other rsponse test case is failed.</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220902 13:02:14.678" level="INFO">Creating Session using : alias=mysession, url=https://api-dev.vee24.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 13:02:14.678" endtime="20220902 13:02:14.679"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:14.680" level="INFO">${endpoint} = /api/AppointmentTypes?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:14.679" endtime="20220902 13:02:14.680"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220902 13:02:14.941" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentTypes?sitename=autotest1 
+ path_url=/api/AppointmentTypes?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:14.942" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentTypes?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'max-age=1800', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:14 GMT', 'Expires': 'Fri, 02 Sep 2022 08:02:14 GMT', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '2119'} 
+ body={"appointmentTypes":[{"id":63,"name":"Test VeeCall","callType":"VeeCall","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"update\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]},{"id":64,"name":"Sofa","callType":"Chat","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"append\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]}]} 
+ </msg>
+<msg timestamp="20220902 13:02:14.943" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:14.680" endtime="20220902 13:02:14.943"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>&amp;{response}</var>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 13:02:14.946" level="INFO">&amp;{response} = { appointmentTypes=[{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "upda...</msg>
+<status status="PASS" starttime="20220902 13:02:14.944" endtime="20220902 13:02:14.946"/>
+</kw>
+<msg timestamp="20220902 13:02:14.947" level="INFO">${response} = {'appointmentTypes': [{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "up...</msg>
+<status status="PASS" starttime="20220902 13:02:14.676" endtime="20220902 13:02:14.947"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${resp_obj}</var>
+<arg>${response}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:14.988" level="INFO">${resp_obj} = ['VeeCall', 'Chat']</msg>
+<status status="PASS" starttime="20220902 13:02:14.948" endtime="20220902 13:02:14.988"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${file_json}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220902 13:02:14.990" level="INFO">${file_json} = {'appointmentTypes': [{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "up...</msg>
+<status status="PASS" starttime="20220902 13:02:14.988" endtime="20220902 13:02:14.990"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${file_json}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:15.011" level="INFO">${json_object} = ['VeeCall', 'Chat']</msg>
+<status status="PASS" starttime="20220902 13:02:14.990" endtime="20220902 13:02:15.011"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp_obj}</arg>
+<arg>${json_object}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220902 13:02:15.012" endtime="20220902 13:02:15.012"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:14.675" endtime="20220902 13:02:15.012"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 13:02:15.013" endtime="20220902 13:02:15.013"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:14.673" endtime="20220902 13:02:15.014"/>
+</test>
+<test id="s1-s2-t4" name="Verifying Customer Information of appointment types with the expected response" line="20">
+<kw name="CompareElements" library="Common_Keyword">
+<arg>${JP_CUSTOMERINFO}</arg>
+<arg>${APPOINTMENTTYPES}</arg>
+<arg>${FP_apptype}</arg>
+<kw name="GetJSON" library="Common_Keyword">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>${elements}</arg>
+<arg>${SITE_NAME}</arg>
+<tag>Common</tag>
+<doc>This keyword checks the response for API request If response code is 200 then case is passed, for any other rsponse test case is failed.</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220902 13:02:15.017" level="INFO">Creating Session using : alias=mysession, url=https://api-dev.vee24.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 13:02:15.017" endtime="20220902 13:02:15.017"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:15.018" level="INFO">${endpoint} = /api/AppointmentTypes?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:15.017" endtime="20220902 13:02:15.018"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220902 13:02:15.232" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentTypes?sitename=autotest1 
+ path_url=/api/AppointmentTypes?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:15.232" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentTypes?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'max-age=1800', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:14 GMT', 'Expires': 'Fri, 02 Sep 2022 08:02:15 GMT', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '2119'} 
+ body={"appointmentTypes":[{"id":63,"name":"Test VeeCall","callType":"VeeCall","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"update\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]},{"id":64,"name":"Sofa","callType":"Chat","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"append\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]}]} 
+ </msg>
+<msg timestamp="20220902 13:02:15.233" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:15.018" endtime="20220902 13:02:15.233"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>&amp;{response}</var>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 13:02:15.236" level="INFO">&amp;{response} = { appointmentTypes=[{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "upda...</msg>
+<status status="PASS" starttime="20220902 13:02:15.234" endtime="20220902 13:02:15.236"/>
+</kw>
+<msg timestamp="20220902 13:02:15.237" level="INFO">${response} = {'appointmentTypes': [{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "up...</msg>
+<status status="PASS" starttime="20220902 13:02:15.017" endtime="20220902 13:02:15.237"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${resp_obj}</var>
+<arg>${response}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:15.292" level="INFO">${resp_obj} = ['[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "update"},    {"name": "Middle Name","type": "text","required" : "1","mappedField" : "Middlename"}...</msg>
+<status status="PASS" starttime="20220902 13:02:15.237" endtime="20220902 13:02:15.292"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${file_json}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220902 13:02:15.294" level="INFO">${file_json} = {'appointmentTypes': [{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "up...</msg>
+<status status="PASS" starttime="20220902 13:02:15.292" endtime="20220902 13:02:15.294"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${file_json}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:15.316" level="INFO">${json_object} = ['[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "update"},    {"name": "Middle Name","type": "text","required" : "1","mappedField" : "Middlename"}...</msg>
+<status status="PASS" starttime="20220902 13:02:15.294" endtime="20220902 13:02:15.316"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp_obj}</arg>
+<arg>${json_object}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220902 13:02:15.316" endtime="20220902 13:02:15.316"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:15.016" endtime="20220902 13:02:15.316"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 13:02:15.317" endtime="20220902 13:02:15.317"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:15.015" endtime="20220902 13:02:15.318"/>
+</test>
+<test id="s1-s2-t5" name="Verifying Slot Durations of appointment types with the expected response" line="25">
+<kw name="CompareElements" library="Common_Keyword">
+<arg>${JP_SLOTDURATION}</arg>
+<arg>${APPOINTMENTTYPES}</arg>
+<arg>${FP_apptype}</arg>
+<kw name="GetJSON" library="Common_Keyword">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>${elements}</arg>
+<arg>${SITE_NAME}</arg>
+<tag>Common</tag>
+<doc>This keyword checks the response for API request If response code is 200 then case is passed, for any other rsponse test case is failed.</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220902 13:02:15.321" level="INFO">Creating Session using : alias=mysession, url=https://api-dev.vee24.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 13:02:15.321" endtime="20220902 13:02:15.322"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:15.322" level="INFO">${endpoint} = /api/AppointmentTypes?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:15.322" endtime="20220902 13:02:15.322"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220902 13:02:15.561" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentTypes?sitename=autotest1 
+ path_url=/api/AppointmentTypes?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:15.561" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentTypes?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'max-age=1800', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:15 GMT', 'Expires': 'Fri, 02 Sep 2022 08:02:15 GMT', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '2119'} 
+ body={"appointmentTypes":[{"id":63,"name":"Test VeeCall","callType":"VeeCall","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"update\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]},{"id":64,"name":"Sofa","callType":"Chat","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"append\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]}]} 
+ </msg>
+<msg timestamp="20220902 13:02:15.562" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:15.322" endtime="20220902 13:02:15.562"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>&amp;{response}</var>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 13:02:15.565" level="INFO">&amp;{response} = { appointmentTypes=[{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "upda...</msg>
+<status status="PASS" starttime="20220902 13:02:15.563" endtime="20220902 13:02:15.565"/>
+</kw>
+<msg timestamp="20220902 13:02:15.566" level="INFO">${response} = {'appointmentTypes': [{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "up...</msg>
+<status status="PASS" starttime="20220902 13:02:15.321" endtime="20220902 13:02:15.566"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${resp_obj}</var>
+<arg>${response}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:15.619" level="INFO">${resp_obj} = [10, 10]</msg>
+<status status="PASS" starttime="20220902 13:02:15.567" endtime="20220902 13:02:15.619"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${file_json}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220902 13:02:15.621" level="INFO">${file_json} = {'appointmentTypes': [{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "up...</msg>
+<status status="PASS" starttime="20220902 13:02:15.619" endtime="20220902 13:02:15.621"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${file_json}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:15.643" level="INFO">${json_object} = [10, 10]</msg>
+<status status="PASS" starttime="20220902 13:02:15.621" endtime="20220902 13:02:15.643"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp_obj}</arg>
+<arg>${json_object}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220902 13:02:15.644" endtime="20220902 13:02:15.644"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:15.320" endtime="20220902 13:02:15.644"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 13:02:15.645" endtime="20220902 13:02:15.645"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:15.320" endtime="20220902 13:02:15.646"/>
+</test>
+<test id="s1-s2-t6" name="Verifying Location IDs of appointment types with the expected response" line="30">
+<kw name="CompareElements" library="Common_Keyword">
+<arg>${JP_LOCATIONIDS}</arg>
+<arg>${APPOINTMENTTYPES}</arg>
+<arg>${FP_apptype}</arg>
+<kw name="GetJSON" library="Common_Keyword">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>${elements}</arg>
+<arg>${SITE_NAME}</arg>
+<tag>Common</tag>
+<doc>This keyword checks the response for API request If response code is 200 then case is passed, for any other rsponse test case is failed.</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220902 13:02:15.649" level="INFO">Creating Session using : alias=mysession, url=https://api-dev.vee24.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 13:02:15.649" endtime="20220902 13:02:15.649"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:15.650" level="INFO">${endpoint} = /api/AppointmentTypes?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:15.650" endtime="20220902 13:02:15.650"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220902 13:02:15.848" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentTypes?sitename=autotest1 
+ path_url=/api/AppointmentTypes?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:15.848" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentTypes?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'max-age=1800', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:15 GMT', 'Expires': 'Fri, 02 Sep 2022 08:02:15 GMT', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '2119'} 
+ body={"appointmentTypes":[{"id":63,"name":"Test VeeCall","callType":"VeeCall","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"update\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]},{"id":64,"name":"Sofa","callType":"Chat","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"append\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]}]} 
+ </msg>
+<msg timestamp="20220902 13:02:15.849" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:15.650" endtime="20220902 13:02:15.849"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>&amp;{response}</var>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 13:02:15.852" level="INFO">&amp;{response} = { appointmentTypes=[{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "upda...</msg>
+<status status="PASS" starttime="20220902 13:02:15.850" endtime="20220902 13:02:15.852"/>
+</kw>
+<msg timestamp="20220902 13:02:15.853" level="INFO">${response} = {'appointmentTypes': [{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "up...</msg>
+<status status="PASS" starttime="20220902 13:02:15.648" endtime="20220902 13:02:15.854"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${resp_obj}</var>
+<arg>${response}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:15.890" level="INFO">${resp_obj} = [[], []]</msg>
+<status status="PASS" starttime="20220902 13:02:15.854" endtime="20220902 13:02:15.890"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${file_json}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220902 13:02:15.892" level="INFO">${file_json} = {'appointmentTypes': [{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "up...</msg>
+<status status="PASS" starttime="20220902 13:02:15.890" endtime="20220902 13:02:15.892"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${file_json}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:15.915" level="INFO">${json_object} = [[], []]</msg>
+<status status="PASS" starttime="20220902 13:02:15.893" endtime="20220902 13:02:15.915"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp_obj}</arg>
+<arg>${json_object}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220902 13:02:15.915" endtime="20220902 13:02:15.916"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:15.648" endtime="20220902 13:02:15.916"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 13:02:15.916" endtime="20220902 13:02:15.917"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:15.647" endtime="20220902 13:02:15.918"/>
+</test>
+<test id="s1-s2-t7" name="Verifying Appointment Types names with the expected response" line="35">
+<kw name="CompareElements" library="Common_Keyword">
+<arg>${JP_APPTNAME}</arg>
+<arg>${APPOINTMENTTYPES}</arg>
+<arg>${FP_apptype}</arg>
+<kw name="GetJSON" library="Common_Keyword">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>${elements}</arg>
+<arg>${SITE_NAME}</arg>
+<tag>Common</tag>
+<doc>This keyword checks the response for API request If response code is 200 then case is passed, for any other rsponse test case is failed.</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220902 13:02:15.921" level="INFO">Creating Session using : alias=mysession, url=https://api-dev.vee24.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 13:02:15.921" endtime="20220902 13:02:15.922"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 13:02:15.922" level="INFO">${endpoint} = /api/AppointmentTypes?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 13:02:15.922" endtime="20220902 13:02:15.922"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220902 13:02:16.143" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentTypes?sitename=autotest1 
+ path_url=/api/AppointmentTypes?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:16.144" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentTypes?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'max-age=1800', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:15 GMT', 'Expires': 'Fri, 02 Sep 2022 08:02:16 GMT', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '2119'} 
+ body={"appointmentTypes":[{"id":63,"name":"Test VeeCall","callType":"VeeCall","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"update\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]},{"id":64,"name":"Sofa","callType":"Chat","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"append\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]}]} 
+ </msg>
+<msg timestamp="20220902 13:02:16.145" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:15.922" endtime="20220902 13:02:16.145"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>&amp;{response}</var>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 13:02:16.147" level="INFO">&amp;{response} = { appointmentTypes=[{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "upda...</msg>
+<status status="PASS" starttime="20220902 13:02:16.145" endtime="20220902 13:02:16.148"/>
+</kw>
+<msg timestamp="20220902 13:02:16.149" level="INFO">${response} = {'appointmentTypes': [{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "up...</msg>
+<status status="PASS" starttime="20220902 13:02:15.921" endtime="20220902 13:02:16.149"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${resp_obj}</var>
+<arg>${response}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:16.193" level="INFO">${resp_obj} = ['Test VeeCall', 'Sofa']</msg>
+<status status="PASS" starttime="20220902 13:02:16.149" endtime="20220902 13:02:16.193"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${file_json}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220902 13:02:16.196" level="INFO">${file_json} = {'appointmentTypes': [{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "up...</msg>
+<status status="PASS" starttime="20220902 13:02:16.194" endtime="20220902 13:02:16.196"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${file_json}</arg>
+<arg>${parameters}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 13:02:16.216" level="INFO">${json_object} = ['Test VeeCall', 'Sofa']</msg>
+<status status="PASS" starttime="20220902 13:02:16.196" endtime="20220902 13:02:16.216"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp_obj}</arg>
+<arg>${json_object}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220902 13:02:16.217" endtime="20220902 13:02:16.217"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:15.920" endtime="20220902 13:02:16.217"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 13:02:16.218" endtime="20220902 13:02:16.218"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:15.919" endtime="20220902 13:02:16.219"/>
+</test>
+<test id="s1-s2-t8" name="Querying specific appointment type returns correct values" line="40">
+<kw name="Querying Appointment Type" library="Common_Keyword">
+<kw name="GET" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>https://api-dev.vee24.com/api/AppointmentTypes/63</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20220902 13:02:16.691" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentTypes/63 
+ path_url=/api/AppointmentTypes/63 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 13:02:16.692" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentTypes/63 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'no-cache', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Fri, 02 Sep 2022 07:32:16 GMT', 'Expires': '-1', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '1053'} 
+ body={"id":63,"name":"Test VeeCall","callType":"VeeCall","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"update\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]} 
+ </msg>
+<msg timestamp="20220902 13:02:16.692" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 13:02:16.221" endtime="20220902 13:02:16.692"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${response}</var>
+<arg>${resp.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20220902 13:02:16.697" level="INFO">${response} = {"id":63,"name":"Test VeeCall","callType":"VeeCall","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},  ...</msg>
+<status status="PASS" starttime="20220902 13:02:16.693" endtime="20220902 13:02:16.697"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 13:02:16.698" endtime="20220902 13:02:16.701"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${response}</arg>
+<arg>${APT_ID_AUTOTEST}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220902 13:02:16.702" endtime="20220902 13:02:16.703"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:16.221" endtime="20220902 13:02:16.704"/>
+</kw>
+<status status="PASS" starttime="20220902 13:02:16.220" endtime="20220902 13:02:16.707"/>
+</test>
+<status status="PASS" starttime="20220902 13:02:14.159" endtime="20220902 13:02:16.713"/>
+</suite>
+<status status="PASS" starttime="20220902 13:02:08.431" endtime="20220902 13:02:16.719"/>
+</suite>
+<statistics>
+<total>
+<stat pass="16" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="16" fail="0" skip="0" id="s1" name="TestSuite">TestSuite</stat>
+<stat pass="8" fail="0" skip="0" id="s1-s1" name="AppointmentCategory">TestSuite.AppointmentCategory</stat>
+<stat pass="8" fail="0" skip="0" id="s1-s2" name="AppointmentTypes">TestSuite.AppointmentTypes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

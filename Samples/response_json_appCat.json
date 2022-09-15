@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "id": 48,
+      "name": "Parent 1",
+      "parentCategoryId": 47,
+      "appointmentTypeId": null,
+      "level": 2,
+      "hasChild": true
+    },
+    {
+      "id": 49,
+      "name": "Child 1",
+      "parentCategoryId": 48,
+      "appointmentTypeId": 63,
+      "level": 3,
+      "hasChild": false
+    },
+    {
+      "id": 50,
+      "name": "Parent 2",
+      "parentCategoryId": 47,
+      "appointmentTypeId": null,
+      "level": 2,
+      "hasChild": true
+    },
+    {
+      "id": 51,
+      "name": "Child 3",
+      "parentCategoryId": 50,
+      "appointmentTypeId": null,
+      "level": 3,
+      "hasChild": true
+    },
+    {
+      "id": 52,
+      "name": "Child 4",
+      "parentCategoryId": 51,
+      "appointmentTypeId": 63,
+      "level": 4,
+      "hasChild": false
+    },
+    {
+      "id": 53,
+      "name": "Child 2",
+      "parentCategoryId": 48,
+      "appointmentTypeId": 63,
+      "level": 3,
+      "hasChild": false
+    }
+  ]
+}

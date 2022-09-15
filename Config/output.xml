@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220902 01:22:51.135" rpa="false" schemaversion="3">
+<suite id="s1" name="Common Keyword" source="C:\DevOps Prac\API Automation\Vee24\Config\Common_Keyword.robot">
+<test id="s1-t1" name="Test 1" line="11">
+<kw name="Protokey">
+<arg>${SITE_NAME}</arg>
+<kw name="GetJSON">
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>${APPOINTMENTTYPES}</arg>
+<arg>${parameters}</arg>
+<tag>Common</tag>
+<doc>This keyword checks the response for API request If response code is 200 then case is passed, for any other rsponse test case is failed.</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220902 01:22:51.480" level="INFO">Creating Session using : alias=mysession, url=https://api-dev.vee24.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220902 01:22:51.480" endtime="20220902 01:22:51.480"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${endpoint}</var>
+<arg>/${elements}?${parameters}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220902 01:22:51.481" level="INFO">${endpoint} = //api/AppointmentTypes?sitename=autotest1</msg>
+<status status="PASS" starttime="20220902 01:22:51.480" endtime="20220902 01:22:51.481"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>mysession</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220902 01:22:51.729" level="INFO">GET Request : url=https://api-dev.vee24.com/api/AppointmentTypes?sitename=autotest1 
+ path_url=/api/AppointmentTypes?sitename=autotest1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220902 01:22:51.729" level="INFO">GET Response : url=https://api-dev.vee24.com/api/AppointmentTypes?sitename=autotest1 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'api-supported-versions': '1.0', 'Cache-Control': 'max-age=1800', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Thu, 01 Sep 2022 19:52:51 GMT', 'Expires': 'Thu, 01 Sep 2022 20:22:51 GMT', 'Pragma': 'no-cache', 'Server': 'unknown', 'X-Content-Type-Options': 'nosniff', 'Content-Length': '2119'} 
+ body={"appointmentTypes":[{"id":63,"name":"Test VeeCall","callType":"VeeCall","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"update\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]},{"id":64,"name":"Sofa","callType":"Chat","customerInfo":"[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"append\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]","slotDuration":10,"locationIds":[]}]} 
+ </msg>
+<msg timestamp="20220902 01:22:51.730" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220902 01:22:51.481" endtime="20220902 01:22:51.730"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>&amp;{response}</var>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 01:22:51.742" level="INFO">&amp;{response} = { appointmentTypes=[{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "upda...</msg>
+<status status="PASS" starttime="20220902 01:22:51.731" endtime="20220902 01:22:51.743"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${type_resp}</var>
+<arg>type($response)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220902 01:22:51.744" level="INFO">${type_resp} = &lt;class 'robot.utils.dotdict.DotDict'&gt;</msg>
+<status status="PASS" starttime="20220902 01:22:51.743" endtime="20220902 01:22:51.744"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${type_resp}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 01:22:51.744" endtime="20220902 01:22:51.746"/>
+</kw>
+<msg timestamp="20220902 01:22:51.747" level="INFO">${response} = {'appointmentTypes': [{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "up...</msg>
+<status status="PASS" starttime="20220902 01:22:51.479" endtime="20220902 01:22:51.747"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220902 01:22:51.747" endtime="20220902 01:22:51.751"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${resp_obj}</var>
+<arg>${response}</arg>
+<arg>${JP_APPTNAME}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 01:22:51.796" level="INFO">${resp_obj} = ['Test VeeCall', 'Sofa']</msg>
+<status status="PASS" starttime="20220902 01:22:51.752" endtime="20220902 01:22:51.796"/>
+</kw>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${file_json}</var>
+<arg>${FP_apptype}</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20220902 01:22:51.798" level="INFO">${file_json} = {'appointmentTypes': [{'id': 63, 'name': 'Test VeeCall', 'callType': 'VeeCall', 'customerInfo': '[{"name": "First Name","type": "text","required" : "1","mappedField" : "Firstname","overrideRule" : "up...</msg>
+<status status="PASS" starttime="20220902 01:22:51.796" endtime="20220902 01:22:51.798"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${file_json}</arg>
+<arg>${JP_APPTNAME}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20220902 01:22:51.821" level="INFO">${json_object} = ['Test VeeCall', 'Sofa']</msg>
+<status status="PASS" starttime="20220902 01:22:51.799" endtime="20220902 01:22:51.821"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${resp_obj}</arg>
+<arg>${json_object}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220902 01:22:51.821" endtime="20220902 01:22:51.821"/>
+</kw>
+<status status="PASS" starttime="20220902 01:22:51.478" endtime="20220902 01:22:51.822"/>
+</kw>
+<status status="PASS" starttime="20220902 01:22:51.478" endtime="20220902 01:22:51.822"/>
+</test>
+<status status="PASS" starttime="20220902 01:22:51.140" endtime="20220902 01:22:51.824"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Common Keyword">Common Keyword</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

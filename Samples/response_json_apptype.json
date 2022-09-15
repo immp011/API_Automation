@@ -1,0 +1,20 @@
+{
+  "appointmentTypes": [
+    {
+      "id": 63,
+      "name": "Test VeeCall",
+      "callType": "VeeCall",
+      "customerInfo": "[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"update\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]",
+      "slotDuration": 10,
+      "locationIds": []
+    },
+    {
+      "id": 64,
+      "name": "Sofa",
+      "callType": "Chat",
+      "customerInfo": "[{\"name\": \"First Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Firstname\",\"overrideRule\" : \"update\"},    {\"name\": \"Middle Name\",\"type\": \"text\",\"required\" : \"1\",\"mappedField\" : \"Middlename\"},    {\"name\": \"Last Name\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Lastname\",\"overrideRule\" : \"update\"},      {\"name\": \"Phone No\",\"type\": \"text\",\"required\" : \"0\",\"mappedField\" : \"Customer Information:Phone Number\",\"overrideRule\" : \"append\"},    {\"name\": \"Email Id\",\"type\": \"email\",\"required\" : \"1\",\"mappedField\" : \"Email\"},       {\"name\": \"Additional Information\",\"type\": \"note\",\"required\" : \"0\",\"mappedField\" : \"Notes:CustomerNotes\",\"overrideRule\" : \"append\", \"appendSeparator\" : \":\"},  {\"name\": \"GDPR Consent Message\",\"placeHolder\" : \"Yes,I Consent\",\"type\": \"checkbox\",\"required\" : \"1\"}]",
+      "slotDuration": 10,
+      "locationIds": []
+    }
+  ]
+}
